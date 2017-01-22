@@ -1,0 +1,24 @@
+1 指标
+
+1.1 accident
+1.1.1 车间距（密度）
+1.1.2 换道次数
+1.1.3 速度方差（important）
+1.1.4 平均速度（只针对人）
+formula:(v_avg*v_var*switch_times)/(car_interval)
+
+1.2 throughput
+1.2.1 number of vehicles per hour(原题)
+1.2.2 number of vehicles per hour * the velocity of each car
+
+1.3 cost
+1.3.1 道路格子乘以道路成本
+1.3.2 红绿灯钱
+1.3.3 路障造价，划线造价
+
+
+
+附录：要查的东西
+1.美国公路造价
+2.美国红绿灯，路障造价
+3.
