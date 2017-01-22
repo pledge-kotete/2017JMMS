@@ -1,4 +1,4 @@
-function [plaza, v, time, departurescount, departurestime,blank_sum,velocity_variance,velocity_average,time_average,out_flow] = clear_boundary(plaza, v, time,L,booth_bottom)
+function [plaza, v, time,blank_sum,velocity_variance,velocity_average,time_average,out_flow,out_cars] = clear_boundary(plaza, v, time,booth_bottom,vmax)
 %
 % clear_boundary  remove the cars of the exit cell
 %
@@ -44,7 +44,21 @@ for i=booth_row+1:booth_bottom
 end
 velocity_variance=var(velocity_list);
 velocity_average=var(velocity_list);
-%计算出收费区的耗时
-time_average=mean(time(booth_bottom+1,b-L:b-1));
-%计算流出收费区域的车流量
-out_flow=sum(v(booth_bottom,:));
+%统计出扇入区的车数、车流、平均耗时
+out_flow=0;%出去车辆的吞吐量
+out_cars=0;%出去车辆的台数
+time_average=0;%出区消耗的平均时间
+for i=1:vmax
+    row=booth_bottom-i+1;
+    for j=1:b
+        if(v(row,j)>=i)
+          out_flow=out_flow+v(row,j);
+          out_cars=out_cars+1;
+          time_average=time_average+time(row,j);%这里的time_average暂时是时间总和
+        end
+    end
+end
+time_average=time_average/out_cars;
+
+
+o=0;
