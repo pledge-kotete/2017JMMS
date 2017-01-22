@@ -5,7 +5,7 @@
 1.1.2 换道次数
 1.1.3 速度方差（important）
 1.1.4 平均速度（只针对人）
-formula:(v_avg*v_var*switch_times)/(car_interval)
+formula:(v_avg*v_var*switch_times*车密度)
 
 1.2 throughput
 1.2.1 number of vehicles per hour(原题)
