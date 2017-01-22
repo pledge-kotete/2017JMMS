@@ -19,6 +19,8 @@ formula:(v_avg*v_var*switch_times)/(car_interval)
 2.1 merging pattern
 2.1.1 限速
 
+计算
+单次单路口绿灯能过多少辆车（即4帧内能通过多少辆车）
 附录：要查的东西
 1.美国公路造价
 2.美国红绿灯，路障造价
